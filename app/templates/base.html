@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My first page</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename="bootstrap.min.css") }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename="bootstrap.min.js")}}">
+	<style>
+	.backgroundDiv{background-image: url('/static/book1.jpg');
+            /* background-color: gray; */
+            height: 300px;
+            opacity: 1
+                  }
+
+	</style>
+	
+</head>
+<header>
+<nav class="navbar navbar-light bg-light">
+  <p style="font-size: 40px"><span>book</span><span style="opacity: 0.5">Zone</span>   
+</nav>
+
+</header>
+<body>
+	 <div class="backgroundDiv">
+       {% block div %}
+       {% endblock %}
+ 
+     </div>	
+     {% block content %}
+     {% endblock %}
+</body>
+</html>
