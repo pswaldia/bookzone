@@ -3,6 +3,8 @@ from flask import render_template,redirect,flash
 from app.forms import RegistrationForm,LoginForm
 from flask_login import current_user,login_user,logout_user
 from app.models import User
+import pandas as pd
+df=pd.read_csv("/Users/pswaldia1/bookzone/app/static/goodread.csv")
 @app.route("/",methods=['GET','POST'])
 def index():
 	registerForm=RegistrationForm()
@@ -17,7 +19,7 @@ def index():
 			return redirect('/')
 		login_user(user,remember=loginForm.remember_me.data)  #this handles the login of the user 
 		return redirect('/')
-	return render_template('forms.html',form2=loginForm,form1=registerForm)		
+	return render_template('forms.html',form2=loginForm,form1=registerForm,df=df)		
 @app.route('/profile')
 def logout():
     logout_user()

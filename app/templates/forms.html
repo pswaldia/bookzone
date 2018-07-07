@@ -79,5 +79,75 @@
 
     
 </div>
+<br>
+
  
 {% endblock %}
+{% block content %}
+<br>
+<br>
+<h4 style="color: #505A64">Most Popular Books Published In 2018</h4>
+<table class="table table-borderless" style="width: 800px">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+     <td><img src="{{ df.Image[0] }}" ></td>
+     <td style="font-size: 10px"><span>{{ df.Title[0] }}</span><br><span>{{ df.author[0] }}</span><br><span>{{ df.Ratings[0] }}</td> 
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+       <td><img src="{{ df.Image[1] }}" ></td>
+     <td style="font-size: 10px"><span>{{ df.Title[1] }}</span><br><span>{{ df.author[1] }}</span><br><span>{{ df.Ratings[1] }}</td> 
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+ <td><img src="{{ df.Image[2] }}" ></td>
+     <td style="font-size: 10px"><span>{{ df.Title[2] }}</span><br><span>{{ df.author[2] }}</span><br><span>{{ df.Ratings[2] }}</td> 
+    </tr>
+       <tr>
+      <th scope="row">4</th>
+ <td><img src="{{ df.Image[3] }}"></td>
+     <td style="font-size: 10px"><span>{{ df.Title[3] }}</span><br><span>{{ df.author[3] }}</span><br><span>{{ df.Ratings[3] }}</td> 
+    </tr>
+       <tr>
+      <th scope="row">5</th>
+ <td><img src="{{ df.Image[4] }}" ></td>
+     <td style="font-size: 10px"><span>{{ df.Title[4] }}</span><br><span>{{ df.author[4] }}</span><br><span>{{ df.Ratings[4] }}</td> 
+    </tr>
+       <tr>
+      <th scope="row">6</th>
+ <td><img src="{{ df.Image[5] }}" ></td>
+     <td style="font-size: 10px"><span>{{ df.Title[5] }}</span><br><span>{{ df.author[5] }}</span><br><span>{{ df.Ratings[5] }}</td> 
+    </tr>
+       <tr>
+      <th scope="row">7</th>
+ <td><img src="{{ df.Image[6] }}" ></td>
+     <td style="font-size: 10px"><span>{{ df.Title[6] }}</span><br><span>{{ df.author[6] }}</span><br><span>{{ df.Ratings[6] }}</td> 
+    </tr>
+       <tr>
+      <th scope="row">8</th>
+ <td><img src="{{ df.Image[7] }}"></td>
+     <td style="font-size: 10px"><span>{{ df.Title[7] }}</span><br><span>{{ df.author[7] }}</span><br><span>{{ df.Ratings[7] }}</td> 
+    </tr>
+       <tr>
+      <th scope="row">9</th>
+ <td><img src="{{ df.Image[8] }}" ></td>
+     <td style="font-size: 10px"><span>{{ df.Title[8] }}</span><br><span>{{ df.author[8] }}</span><br><span>{{ df.Ratings[8] }}</td> 
+    </tr>
+           <tr>
+      <th scope="row">10</th>
+ <td><img src="{{ df.Image[9] }}" ></td>
+     <td style="font-size: 10px"><span>{{ df.Title[9] }}</span><br><span>{{ df.author[9] }}</span><br><span>{{ df.Ratings[9] }}</td> 
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
+            
