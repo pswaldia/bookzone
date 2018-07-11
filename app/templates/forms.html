@@ -1,84 +1,60 @@
 {% extends "base.html" %}
 
 {% block div %}
- <div style="width: 300px;padding-left: 800px">
- <h6 style="color: black">NewUser?</h6>
+ <div style="width: 700px;padding-left: 300px">
+ <h6 style="color: black">New user? Register Here!</h6>
  <form action="" method="post" novalidate>
  	{{ form1.hidden_tag() }}
  	<p style="color: white">
  		
- 		{{ form1.username(size=32,placeholder="Username",style="height: 25px;width: 170px;font-size: 10px") }}
+ 		{{ form1.username(size=32,placeholder="Username",style="height: 25px;width: 190px;font-size: 10px") }}
  		{% for error in form1.username.errors %}
- 		<span color:"red">{{ error }}</span>
+ 		<span style="color:white;font-size: 10px" >{{ error }}</span>
  		{% endfor %}
 
     </p>
     <p style="color: white">
     	
- 		{{ form1.email(size=32,placeholder="Email",style="height: 25px;width: 170px;font-size: 10px") }}
+ 		{{ form1.email(size=32,placeholder="Email",style="height: 25px;width: 190px;font-size: 10px") }}
  		{% for error in form1.email.errors %}
- 		<span color:"red">{{ error }}</span>
+ 		<span style="color:white;font-size: 10px">{{ error }}</span>
  		{% endfor %}
     </p>
 
 
     <p style="color: white">
     	
- 		{{ form1.password(size=32,placeholder="Password",style="height: 25px;width: 170px;font-size: 10px") }}
+ 		{{ form1.password(size=32,placeholder="Password",style="height: 25px;width: 190px;font-size: 10px") }}
  		{% for error in form1.password.errors %}
- 		<span color:"red">{{ error }}</span>
+ 		<span style="color:white;font-size: 10px">{{ error }}</span>
  		{% endfor %}
     </p>
     <p style="color: white">
- 		{{ form1.password2(size=32,placeholder="Repeat Password",style="height: 25px;width: 170px;font-size: 10px") }}
+ 		{{ form1.password2(size=32,placeholder="Repeat Password",style="height: 25px;width: 190px;font-size: 10px") }}
  		{% for error in form1.password2.errors %}
- 		<span color:"red">{{ error }}</span>
+ 		<span style="color:white;font-size: 10px">{{ error }}</span>
  		{% endfor %}
 
     </p>
-    <p style="color: white"> {{ form1.submit( class="btn btn-primary",style="height: 25px;font-size: 10px") }}</p>
-
+    <p style="color: white"> {{ form1.submit( class="btn btn-primary",style="height: 25px;font-size: 10px") }}
+     </p>
+     <p> 
+    <a href="{{ url_for('login') }}" class="btn btn-primary" role="button" style="height:25px;font-size: 10px;width:70px">Login</a><span style="color: white;font-size:10px"> Already registered!</span>
+    </p >
+    <pstyle="color: white">
+         {% with messages=get_flashed_messages() %}
+      {% if messages %}
+      <ul >
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+     {% endif %}
+     {% endwith %}
+    </p>
     </form>
 
 
- </div>
- <div style="padding-left: 400px;margin-top: -230px">
-
-     <h6 style="color: black">Login here</h6>
-    <form action="" method="post" novalidate>
-     {{ form2.hidden_tag() }}
-     <p>
-       {{ form2.username(size=32,placeholder="Username",style="height: 25px;width: 170px;font-size: 10px") }}
-       {% for error in form2.username.errors %}
-        <span style="color:red">{{ error }}</span>
-        {% endfor %}
-    </p>
-
-    <p>
-     {{ form2.password(size=32,placeholder="Password",style="height: 25px;width: 170px;font-size: 10px") }}
-     {% for error in form2.password.errors %}
-     <span style="color:red">{{ error }}</span>
-     {% endfor %}
-
-     </p>
-
-
-    <p style="color:white;font-size: 15px">
-     {{ form2.remember_me() }}{{ form2.remember_me.label }}
-    </p>
-    <p>
-     
-     {{ form2.submit(class="btn btn-primary",style="height: 25px;font-size: 10px") }}
-
-
-    </p> 
-
-
-
-     </form>
-
-    
-</div>
 <br>
 
  
@@ -149,5 +125,6 @@
     </tr>
   </tbody>
 </table>
+
 {% endblock %}
             
